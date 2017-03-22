@@ -1,0 +1,12 @@
+{
+  "name": "bardot",
+  "version": "0.1.0",
+  "description": "Yet another console progress bar",
+  "main": "index.js",
+  "author": {
+    "name": "David Smith",
+    "email": "bardot@avaragado.org",
+    "url": "https://avaragado.org"
+  },
+  "license": "MIT"
+}
