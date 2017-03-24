@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 0/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"      0/32"`;
+
+exports[`render 8/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿     8/32"`;
+
+exports[`render 10/100 {"mode":"fill","ctCharMinus":0,"ctCharFull":30} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "%bar" 1`] = `"%bar"`;
+
+exports[`render 10/100 {"mode":"fill","ctCharMinus":0,"ctCharFull":30} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿⣿⡀                     10/100"`;
+
+exports[`render 16/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿⣿   16/32"`;
+
+exports[`render 18/32 {"mode":"bar","ctChar":4} {"full":"*","empty":"-","fractions":[]} "|bar| |cur|/|max|" 1`] = `"**-- 18/32"`;
+
+exports[`render 18/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "[37m[45m|bar|[49m[39m [1m|cur|[22m[2m/[22m[1m|max|[22m [32m|pct|%[39m" 1`] = `"[37m[45m⣿⣿⡄ [49m[39m [1m18[22m[2m/[22m[1m32[22m [32m56.3%[39m"`;
+
+exports[`render 18/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|% //// |bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⡄  18/32 56.3% //// ⣿⣿⡄  18/32 56.3%"`;
+
+exports[`render 18/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⡄  18/32 56.3%"`;
+
+exports[`render 18/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿⣿⡄  18/32"`;
+
+exports[`render 18/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "look |pct|% at |cur|/|max| this |bar|!" 1`] = `"look 56.3% at 18/32 this ⣿⣿⡄ !"`;
+
+exports[`render 18/32 {"mode":"bar-label","ctChar":5} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `""`;
+
+exports[`render 18/32 {"mode":"bar-label","ctChar":10} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿⣿⡄  18/32"`;
+
+exports[`render 18/32 {"mode":"bar-label","ctChar":16} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⡄  18/32 56.3%"`;
+
+exports[`render 18/32 {"mode":"bar-label","ctChar":20} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⣿⣿⡇    18/32 56.3%"`;
+
+exports[`render 18/32 {"mode":"fill","ctCharMinus":0,"ctCharFull":5} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `""`;
+
+exports[`render 18/32 {"mode":"fill","ctCharMinus":10,"ctCharFull":30} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⣿⣿⡇    18/32 56.3%"`;
+
+exports[`render 20/32 {"mode":"bar","ctChar":4} {"full":"#","empty":" ","fractions":["+"]} "|bar| |cur|/|max|" 1`] = `"##+  20/32"`;
+
+exports[`render 32/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⣿⣿ 32/32  100%"`;
+
+exports[`render 32/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿⣿⣿⣿ 32/32"`;
+
+exports[`render 32/32 {"mode":"bar","ctChar":8} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿⣿⣿⣿⣿⣿⣿⣿ 32/32"`;
+
+exports[`render 100/100 {"mode":"fill","ctCharMinus":0,"ctCharFull":null} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "[32m|bar|[39m |cur|/|max|" 1`] = `"[32m⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿[39m 100/100"`;
