@@ -2,6 +2,14 @@
   "name": "bardot",
   "version": "0.2.0",
   "description": "Yet another console progress bar",
+  "keywords": [
+    "progress",
+    "bar",
+    "cli",
+    "console",
+    "terminal",
+    "term"
+  ],
   "main": "./dist/index.js",
   "files": [
     "dist/"
