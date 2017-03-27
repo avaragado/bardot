@@ -242,7 +242,7 @@ If you do this it'll just about work, but you'll have fun with character counts 
 
 ### Building and testing
 
-The package uses [`nps`](https://www.npmjs.com/package/nps) as a layer above npm scripts. See [`package-scripts.js`](../package-scripts.js) for all the build targets. Common targets:
+The package uses [`nps`](https://www.npmjs.com/package/nps) as a layer above npm scripts. See [`package-scripts.js`](./package-scripts.js) for all the build targets. Common targets:
 
 ```bash
 $ nps b    # or nps build - full build with linting and tests

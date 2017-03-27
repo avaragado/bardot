@@ -92,7 +92,7 @@ const renderOptData = (od) => {
     const map = {
         // right-align cur and pct within their space to avoid overall length changes
         cur: od.opt.cur.toString().padStart(od.opt.max.toString().length),
-        max: od.opt.max,
+        max: od.opt.max.toString(),
         pct: (Math.round((1000 * od.opt.cur) / od.opt.max) / 10).toString().padStart(4),
         bar: bar(od),
     };
