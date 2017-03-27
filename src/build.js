@@ -113,7 +113,7 @@ export const symbol: { [key: string]: BarSymbol } = {
 
 export const optDefault: Option = {
     cur: 0,
-    max: 100,
+    max: 100000,
     width: width.fill(0),
     tpl: template.barCurMax,
     symbol: symbol.dot8,
