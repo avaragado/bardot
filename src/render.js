@@ -13,12 +13,19 @@ type OptData = {
     },
 };
 
-const replace = (tpl, map) => tpl.replace(/\|(bar|cur|max|pct)\|/g, (match, word) => map[word]);
+type ReplaceMap = {
+    [key: string]: string,
+};
 
-const ctCharLabelMax = opt => len(replace(opt.tpl, {
-    cur: opt.max,
-    max: opt.max,
-    pct: 99.9, // more chars than 100
+const replace = (tpl: string, map: ReplaceMap): string => tpl.replace(
+    /\|(bar|cur|max|pct)\|/g,
+    (match: string, word: string): string => map[word],
+);
+
+const ctCharLabelMax = (opt: Option): number => len(replace(opt.tpl, {
+    cur: opt.max.toString(),
+    max: opt.max.toString(),
+    pct: '99.9', // more chars than '100'
     bar: '',
 }));
 
