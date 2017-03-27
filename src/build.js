@@ -4,11 +4,11 @@ import chalk from 'chalk';
 
 type WidthFill = {| mode: 'fill', ctCharMinus: number, ctCharFull: ?number |};
 type WidthBar = {| mode: 'bar', ctChar: number |};
-type WidthBarLabel = {| mode: 'bar-label', ctChar: number |};
+type WidthTemplate = {| mode: 'template', ctChar: number |};
 
 type Template = string;
 
-type Width = WidthFill | WidthBar | WidthBarLabel;
+type Width = WidthFill | WidthBar | WidthTemplate;
 
 type BarSymbol = {|
     full: string,
@@ -35,16 +35,11 @@ type OptionSparse = {
 };
 
 type Chainable = {
-    at: (cur: number) => Chainable,
-    of: (max: number) => Chainable,
+    current: (cur: number) => Chainable,
+    maximum: (max: number) => Chainable,
     widthFill: (ctCharMinus?: number, ctCharFull?: ?number) => Chainable,
     widthBar: (ctChar?: number) => Chainable,
-    widthBarLabel: (ctChar?: number) => Chainable,
-    showBarCur: () => Chainable,
-    showBarCurMax: () => Chainable,
-    showBarCurMaxPct: () => Chainable,
-    showBarPct: () => Chainable,
-    showBar: () => Chainable,
+    widthTemplate: (ctChar?: number) => Chainable,
     template: (tpl: Template) => Chainable,
     symbols: (symbol: BarSymbol) => Chainable,
     toString: () => string,
@@ -54,7 +49,7 @@ type Chainable = {
 export const width: { [key: string]: (ct?: number) => Width } = {
     fill: (ctCharMinus = 0, ctCharFull = null) => ({ mode: 'fill', ctCharMinus, ctCharFull }),
     bar: (ctChar = 50) => ({ mode: 'bar', ctChar }),
-    barLabel: (ctChar = 50) => ({ mode: 'bar-label', ctChar }),
+    template: (ctChar = 50) => ({ mode: 'template', ctChar }),
 };
 
 const greenbar = chalk.green('|bar|');
@@ -111,8 +106,8 @@ export const symbol: { [key: string]: BarSymbol } = {
     },
     hashdash: {
         full: '#',
-        empty: ' ',
-        fractions: ['-', '+', '⧺'],
+        empty: '-',
+        fractions: ['+', '⧺'],
     },
 };
 
@@ -128,19 +123,15 @@ export const optDefault: Option = {
 const build = (optIn?: OptionSparse): Chainable => {
     const opt = { ...optDefault, ...optIn };
     const extend = (optPlus: OptionSparse) => build({ ...opt, ...optPlus });
+    const roundPos = val => Math.max(0, Math.round(val));
 
     return {
-        at: cur => extend({ cur }),
-        of: max => extend({ max }),
+        current: cur => extend({ cur: Math.min(opt.max, roundPos(cur)) }),
+        maximum: max => extend({ max: roundPos(max), cur: Math.min(roundPos(max), opt.cur) }),
         widthFill: (ctCharMinus, ctCharFull) =>
             extend({ width: width.fill(ctCharMinus, ctCharFull) }),
         widthBar: ctChar => extend({ width: width.bar(ctChar) }),
-        widthBarLabel: ctChar => extend({ width: width.barLabel(ctChar) }),
-        showBarCur: () => extend({ tpl: template.barCur }),
-        showBarCurMax: () => extend({ tpl: template.barCurMax }),
-        showBarCurMaxPct: () => extend({ tpl: template.barCurMaxPct }),
-        showBarPct: () => extend({ tpl: template.barPct }),
-        showBar: () => extend({ tpl: template.bar }),
+        widthTemplate: ctChar => extend({ width: width.template(ctChar) }),
         template: tpl => extend({ tpl }),
         symbols: symbolIn => extend({ symbol: symbolIn }),
         toString: () => opt.renderer(opt),

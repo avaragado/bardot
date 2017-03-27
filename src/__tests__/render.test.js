@@ -80,21 +80,21 @@ const arOpt: Option[] = [
     {
         cur: 18,
         max: 32,
-        width: width.barLabel(10),
+        width: width.template(10),
         symbol: symbol.dot8,
         tpl: '|bar| |cur|/|max|',
     },
     {
         cur: 18,
         max: 32,
-        width: width.barLabel(16),
+        width: width.template(16),
         symbol: symbol.dot8,
         tpl: '|bar| |cur|/|max| |pct|%',
     },
     {
         cur: 18,
         max: 32,
-        width: width.barLabel(20),
+        width: width.template(20),
         symbol: symbol.dot8,
         tpl: '|bar| |cur|/|max| |pct|%',
     },
@@ -144,7 +144,7 @@ const arOpt: Option[] = [
     {
         cur: 18,
         max: 32,
-        width: width.barLabel(5), // not long enough
+        width: width.template(5), // not long enough
         symbol: symbol.dot8,
         tpl: '|bar| |cur|/|max|',
     },
@@ -174,6 +174,39 @@ const arOpt: Option[] = [
             full: '#',
             empty: ' ',
             fractions: ['+'],
+        },
+        tpl: '|bar| |cur|/|max|',
+    },
+    {
+        cur: 20,
+        max: 32,
+        width: width.bar(4),
+        symbol: {
+            full: '[]',
+            empty: '  ',
+            fractions: ['..', '.+', '+.'],
+        },
+        tpl: '|bar| |cur|/|max|',
+    },
+    {
+        cur: 19,
+        max: 32,
+        width: width.bar(4),
+        symbol: {
+            full: 'x',
+            empty: ' ',
+            fractions: [],
+        },
+        tpl: '|bar| |cur|/|max|',
+    },
+    {
+        cur: 19,
+        max: 32,
+        width: width.bar(4),
+        symbol: {
+            full: 'x',
+            empty: ' ',
+            fractions: ['o'],
         },
         tpl: '|bar| |cur|/|max|',
     },

@@ -1,6 +1,6 @@
 // @flow
 
-import build, { optDefault, width, template } from '../build';
+import build, { optDefault, width } from '../build';
 
 describe('build', () => {
     it('returns default options', () => {
@@ -24,22 +24,62 @@ describe('build', () => {
         expect(b3).not.toBe(b2);
     });
 
-    it('has an "at" method', () => {
+    it('has a "current" method', () => {
         const cur = 12;
         const b1 = build();
-        const b2 = b1.at(cur);
+        const b2 = b1.current(cur);
 
         expect(b2).not.toBe(b1);
         expect(b2.opt()).toEqual({ ...optDefault, cur });
     });
 
-    it('has an "of" method', () => {
+    it('has a "maximum" method', () => {
         const max = 123;
         const b1 = build();
-        const b2 = b1.of(max);
+        const b2 = b1.maximum(max);
 
         expect(b2).not.toBe(b1);
         expect(b2.opt()).toEqual({ ...optDefault, max });
+    });
+
+    it('sets cur to max if setting cur above max', () => {
+        const max = 100;
+        const b1 = build().maximum(max);
+        const b2 = b1.current(max + 1);
+
+        expect(b2.opt()).toEqual({ ...optDefault, cur: max, max });
+    });
+
+    it('sets cur to 0 if setting cur below zero', () => {
+        const b1 = build().current(-1);
+
+        expect(b1.opt()).toEqual({ ...optDefault, cur: 0 });
+    });
+
+    it('sets cur to max if setting max below cur', () => {
+        const max = 40;
+        const b1 = build().maximum(100).current(50);
+        const b2 = b1.maximum(40);
+
+        expect(b2.opt()).toEqual({ ...optDefault, cur: max, max });
+    });
+
+    it('sets max and cur to 0 if setting max below zero', () => {
+        const b1 = build().maximum(-1);
+
+        expect(b1.opt()).toEqual({ ...optDefault, cur: 0, max: 0 });
+    });
+
+    it('rounds floats to ints for current', () => {
+        const b = build().current(11.3);
+
+        expect(b.opt()).toEqual({ ...optDefault, cur: 11 });
+    });
+
+    it('rounds floats to ints for maximum', () => {
+        const b = build().maximum(111.7);
+
+        expect(b.opt()).toEqual({ ...optDefault, max: 112 });
     });
 
     it('has a "widthFill" method', () => {
@@ -70,56 +110,16 @@ describe('build', () => {
         expect(b3.opt()).toEqual({ ...optDefault, width: width.bar() });
     });
 
-    it('has a "widthBarLabel" method', () => {
+    it('has a "widthTemplate" method', () => {
         const ctChar = 12;
         const b1 = build();
-        const b2 = b1.widthBarLabel(ctChar);
-        const b3 = b1.widthBarLabel();
+        const b2 = b1.widthTemplate(ctChar);
+        const b3 = b1.widthTemplate();
 
         expect(b2).not.toBe(b1);
         expect(b3).not.toBe(b2);
-        expect(b2.opt()).toEqual({ ...optDefault, width: width.barLabel(ctChar) });
-        expect(b3.opt()).toEqual({ ...optDefault, width: width.barLabel() });
-    });
-
-    it('has a "showBarCur" method', () => {
-        const b1 = build();
-        const b2 = b1.showBarCur();
-
-        expect(b2).not.toBe(b1);
-        expect(b2.opt()).toEqual({ ...optDefault, tpl: template.barCur });
-    });
-
-    it('has a "showBarCurMax" method', () => {
-        const b1 = build();
-        const b2 = b1.showBarCurMax();
-
-        expect(b2).not.toBe(b1);
-        expect(b2.opt()).toEqual({ ...optDefault, tpl: template.barCurMax });
-    });
-
-    it('has a "showBarCurMaxPct" method', () => {
-        const b1 = build();
-        const b2 = b1.showBarCurMaxPct();
-
-        expect(b2).not.toBe(b1);
-        expect(b2.opt()).toEqual({ ...optDefault, tpl: template.barCurMaxPct });
-    });
-
-    it('has a "showBarPct" method', () => {
-        const b1 = build();
-        const b2 = b1.showBarPct();
-
-        expect(b2).not.toBe(b1);
-        expect(b2.opt()).toEqual({ ...optDefault, tpl: template.barPct });
-    });
-
-    it('has a "showBar" method', () => {
-        const b1 = build();
-        const b2 = b1.showBar();
-
-        expect(b2).not.toBe(b1);
-        expect(b2.opt()).toEqual({ ...optDefault, tpl: template.bar });
+        expect(b2.opt()).toEqual({ ...optDefault, width: width.template(ctChar) });
+        expect(b3.opt()).toEqual({ ...optDefault, width: width.template() });
     });
 
     it('has a "template" method', () => {

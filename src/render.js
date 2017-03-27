@@ -31,7 +31,7 @@ const ctCharBarDerive = (width, opt) => {
 
         // user configures the total size of bar + label.
         // derive the bar size by subtracting the maximum label size.
-        case 'bar-label': {
+        case 'template': {
             return width.ctChar - ctCharLabelMax(opt);
         }
 
@@ -63,11 +63,18 @@ const addData = (opt: Option): OptData => {
 };
 
 const bar = ({ opt, data }) => {
-    const arsPart = [''].concat(opt.symbol.fractions);
-    const sBlocks = opt.symbol.full.repeat(opt.cur * data.ctBlockPerNum);
+    const ctBlock = opt.cur * data.ctBlockPerNum;
+    const sBlocks = opt.symbol.full.repeat(ctBlock);
+    const sEmpties = opt.symbol.empty.repeat((opt.max - opt.cur) * data.ctBlockPerNum);
+
+    if (ctBlock === Math.floor(ctBlock)) {
+        return sBlocks + sEmpties;
+    }
+
+    const arsPart = [opt.symbol.empty].concat(opt.symbol.fractions || []);
     const sPart = arsPart[Math.floor(opt.cur * data.ctPipPerNum) % arsPart.length];
 
-    return (sBlocks + sPart).padEnd(data.ctCharBar, opt.symbol.empty);
+    return sBlocks + sPart + sEmpties;
 };
 
 const renderOptData = (od) => {

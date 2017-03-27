@@ -22,19 +22,25 @@ exports[`render 18/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fract
 
 exports[`render 18/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "look |pct|% at |cur|/|max| this |bar|!" 1`] = `"look 56.3% at 18/32 this ⣿⣿⡄ !"`;
 
-exports[`render 18/32 {"mode":"bar-label","ctChar":5} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `""`;
-
-exports[`render 18/32 {"mode":"bar-label","ctChar":10} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿⣿⡄  18/32"`;
-
-exports[`render 18/32 {"mode":"bar-label","ctChar":16} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⡄  18/32 56.3%"`;
-
-exports[`render 18/32 {"mode":"bar-label","ctChar":20} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⣿⣿⡇    18/32 56.3%"`;
-
 exports[`render 18/32 {"mode":"fill","ctCharMinus":0,"ctCharFull":5} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `""`;
 
 exports[`render 18/32 {"mode":"fill","ctCharMinus":10,"ctCharFull":30} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⣿⣿⡇    18/32 56.3%"`;
 
+exports[`render 18/32 {"mode":"template","ctChar":5} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `""`;
+
+exports[`render 18/32 {"mode":"template","ctChar":10} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max|" 1`] = `"⣿⣿⡄  18/32"`;
+
+exports[`render 18/32 {"mode":"template","ctChar":16} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⡄  18/32 56.3%"`;
+
+exports[`render 18/32 {"mode":"template","ctChar":20} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⣿⣿⡇    18/32 56.3%"`;
+
+exports[`render 19/32 {"mode":"bar","ctChar":4} {"full":"x","empty":" ","fractions":["o"]} "|bar| |cur|/|max|" 1`] = `"xx   19/32"`;
+
+exports[`render 19/32 {"mode":"bar","ctChar":4} {"full":"x","empty":" ","fractions":[]} "|bar| |cur|/|max|" 1`] = `"xx   19/32"`;
+
 exports[`render 20/32 {"mode":"bar","ctChar":4} {"full":"#","empty":" ","fractions":["+"]} "|bar| |cur|/|max|" 1`] = `"##+  20/32"`;
+
+exports[`render 20/32 {"mode":"bar","ctChar":4} {"full":"[]","empty":"  ","fractions":["..",".+","+."]} "|bar| |cur|/|max|" 1`] = `"[][].+   20/32"`;
 
 exports[`render 32/32 {"mode":"bar","ctChar":4} {"full":"⣿","empty":" ","fractions":["⡀","⡄","⡆","⡇","⣇","⣧","⣷"]} "|bar| |cur|/|max| |pct|%" 1`] = `"⣿⣿⣿⣿ 32/32  100%"`;
 
