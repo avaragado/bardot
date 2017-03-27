@@ -237,3 +237,39 @@ You can, technically, define a symbol set that uses multiple characters for each
 
 If you do this it'll just about work, but you'll have fun with character counts in the `widthTemplate` and `widthFill` cases as they assume each bar segment is one character wide. I might fix this at some point.
 
+
+## Developer notes
+
+### Building and testing
+
+The package uses [`nps`](https://www.npmjs.com/package/nps) as a layer above npm scripts. See [`package-scripts.js`](../package-scripts.js) for all the build targets. Common targets:
+
+```bash
+$ nps b    # or nps build - full build with linting and tests
+$ nps b.q  # or nps build.quick - build without linting or tests
+$ nps l    # or nps lint - lint js and check flow types
+$ nps l.j  # or nps lint.js - lint js only
+$ nps t    # or nps test - run tests
+$ nps t.w  # or nps test.watch - test with watch
+$ nps f    # or nps flow - check flow types
+$ nps f.t  # or nps flow.typed - update all third-party types via flow-typed
+```
+
+### Branches and merging
+
+When merging to master select **Squash and Merge**.
+
+In the commit message, follow [conventional-changelog-standard conventions](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md).
+
+
+### Releasing
+
+When ready to release to npm:
+
+1. `git checkout master`
+1. `git pull origin master`
+1. `nps release`
+1. Engage pre-publication paranoia
+1. `git push --follow-tags origin master`
+1. `npm publish`
+
