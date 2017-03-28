@@ -14,6 +14,9 @@
   "files": [
     "dist/"
   ],
+  "homepage": "https://github.com/avaragado/bardot#readme",
+  "repository": "avaragado/bardot",
+  "bugs": "https://github.com/avaragado/bardot/issues",
   "author": {
     "name": "David Smith",
     "email": "bardot@avaragado.org",
