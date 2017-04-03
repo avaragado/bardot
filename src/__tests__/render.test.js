@@ -210,6 +210,13 @@ const arOpt: Option[] = [
         },
         tpl: '|bar| |cur|/|max|',
     },
+    {
+        cur: 689,
+        max: 689,
+        width: width.fill(9, 80),
+        symbol: symbol.dot8,
+        tpl: '|bar| |cur|/|max|',
+    },
 
 ].map(opt => ({ ...opt, renderer: () => '' })); // renderer ignored here
 

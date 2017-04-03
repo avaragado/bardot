@@ -74,7 +74,7 @@ const bar = ({ opt, data }) => {
     const sBlocks = opt.symbol.full.repeat(ctBlock);
     const sEmpties = opt.symbol.empty.repeat((opt.max - opt.cur) * data.ctBlockPerNum);
 
-    if (ctBlock === Math.floor(ctBlock)) {
+    if (sBlocks.length + sEmpties.length === data.ctCharBar) {
         return sBlocks + sEmpties;
     }
 
