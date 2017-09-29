@@ -46,10 +46,10 @@ type Chainable = {
     opt: () => Option,
 };
 
-export const width: { [key: string]: (ct?: number) => Width } = {
-    fill: (ctCharMinus = 0, ctCharFull = null) => ({ mode: 'fill', ctCharMinus, ctCharFull }),
-    bar: (ctChar = 50) => ({ mode: 'bar', ctChar }),
-    template: (ctChar = 50) => ({ mode: 'template', ctChar }),
+export const width = {
+    fill: (ctCharMinus: number = 0, ctCharFull: ?number = null) => ({ mode: 'fill', ctCharMinus, ctCharFull }),
+    bar: (ctChar: number = 50) => ({ mode: 'bar', ctChar }),
+    template: (ctChar: number = 50) => ({ mode: 'template', ctChar }),
 };
 
 const greenbar = chalk.green('|bar|');

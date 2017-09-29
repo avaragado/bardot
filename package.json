@@ -28,30 +28,30 @@
     "test": "nps test"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-eslint": "^7.2.1",
-    "babel-jest": "^19.0.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.2.2",
-    "concurrently": "^3.4.0",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-flowtype": "^2.30.4",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jest": "^19.0.1",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
-    "flow-bin": "^0.42.0",
-    "flow-copy-source": "^1.1.0",
+    "babel-preset-env": "^1.6.0",
+    "concurrently": "^3.5.0",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-flowtype": "^2.36.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^21.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "^0.56.0",
+    "flow-copy-source": "^1.2.1",
     "flow-coverage-report": "^0.3.0",
-    "flow-typed": "^2.0.0",
-    "jest": "^19.0.2",
-    "nps": "^5.0.5",
-    "rimraf": "^2.6.1",
-    "standard-version": "^4.0.0"
+    "flow-typed": "^2.1.5",
+    "jest": "^21.2.1",
+    "nps": "^5.7.1",
+    "rimraf": "^2.6.2",
+    "standard-version": "^4.2.0"
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -61,7 +61,7 @@
     ]
   },
   "dependencies": {
-    "chalk": "^1.1.3",
-    "string-length": "^1.0.1"
+    "chalk": "^2.1.0",
+    "string-length": "^2.0.0"
   }
 }
