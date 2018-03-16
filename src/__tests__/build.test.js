@@ -12,7 +12,7 @@ describe('build', () => {
 
         expect(build({ renderer }).toString()).toEqual('x');
         expect(renderer.mock.calls[0]).toEqual([{ ...optDefault, renderer }]);
-        expect(renderer.mock.calls.length).toEqual(1);
+        expect(renderer.mock.calls).toHaveLength(1);
     });
 
     it('returns different instances', () => {

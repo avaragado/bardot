@@ -1,6 +1,9 @@
 # bardot
 
-Yet another progress bar for console apps. This one has the following features:
+> Yet another progress bar for console apps
+
+
+## Features
 
 - Chainable syntax to easily derive bars from others and pass them around
 - Customisable appearance: a template defines whether/where to show the bar, current value, max value, percentage complete, and any extra text you want
@@ -9,7 +12,7 @@ Yet another progress bar for console apps. This one has the following features:
 - Set the bar length you want, or the total length of the template (bar + labels), or make the template fill the line (leaving room if you want)
 - Flowtype support
 
-It's bardot as in Brigitte: _bar-doe_. But it's a bar, and there are dots, and the name's available.
+It's bardot as in Brigitte: _bar-doe_. But it's a bar, and there are dots, and the name was available.
 
 
 ## Installation
