@@ -1,6 +1,6 @@
 {
   "name": "bardot",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Yet another console progress bar",
   "keywords": [
     "progress",
